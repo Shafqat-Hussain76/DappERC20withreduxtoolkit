@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import React, { useState } from "react";
 import { LoadBlockchain } from "./redux/appreducer";
 import { assert } from "chai";
+import { ethers } from "ethers";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function App() {
   const [frAdd, setFrAdd] = useState("");
   const [toAdd, setToAdd] = useState("");
   const [trfAmt, setTrfAmt] = useState(0);
+  const [tkAmt, setTkAmt] = useState("");
 
   console.log(list);
 
@@ -61,15 +63,22 @@ function App() {
 
   }
   const buy= async()=>{
-    const val1 = await conractSigner.buyTokens();
+    const val1 = await conractSigner.buyTokens(
+      { value: ethers.utils.parseEther(tkAmt),
+      
+    });
     await val1.wait();
+    
 
   }
   return (
     <>
     <div className="App">
       <button onClick={load}>Connect Metamask</button><br /><br />
-      <button onClick={buy}>Buy Tokens</button>
+      <h3>Contract is deployed on Ropsten and Address is :-0x35D87a7D7CC83B9520494F4cb19ad96dD0A7b17b  </h3>
+      <h3>Token Price is :- 100 tokens per Ether</h3>
+      <button onClick={buy}>Get Tokens</button>
+      <input value={tkAmt} onChange={(e)=>setTkAmt(e.target.value)}/>
       <h5>The Contract Name is:- { name }</h5>
       <h5>The Contract Symbol is:- { symbol }</h5>
       <h5>The Token Total Supply is:- { supply } WEI</h5>

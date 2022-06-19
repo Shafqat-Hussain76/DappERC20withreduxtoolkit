@@ -7,7 +7,7 @@ contract MYERC20 is ERC20("ERC20Token", "ERT") {
     event BuyTokens(address indexed from, address indexed to, uint indexed amount);
     address owner;
     constructor(){
-        _mint(_msgSender(), 1000 * 10 ** decimals());
+        _mint(_msgSender(), 10000 * 10 ** decimals());
         owner = _msgSender();
     }
 

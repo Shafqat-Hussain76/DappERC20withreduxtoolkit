@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { ethers } from "ethers";
 import MYERC20 from "../artifacts/contracts/MYERC20.sol/MYERC20.json";
-const contractAddress = "0x02658D0dAbca48cE22140dda5BcB889FBD6cABa6";//ropsten
+const contractAddress = "0x35D87a7D7CC83B9520494F4cb19ad96dD0A7b17b";//ropsten
 
 const initialState = {
     contractProvider: null,

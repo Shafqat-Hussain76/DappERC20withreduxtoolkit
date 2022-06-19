@@ -8,7 +8,7 @@ This project demonstrates an advanced Hardhat use case,
 5) Deployed and verified the contract with hardhat
 6) The Dapp is deployed at surge and link is 
 
-https://erc20dapp-reduxtoolkit.surge.sh/
+https://dapperc20-reduxtoolkit.surge.sh/
 
 The project comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts. It also comes with a variety of other tools, preconfigured to work with the project code.
 
